@@ -11,6 +11,6 @@ public class MovieProfit_01 {
         double ticketPrice = Double.parseDouble(scanner.nextLine());
         int commission = Integer.parseInt(scanner.nextLine());
         double result = (totalDays*ticketsPerDay*ticketPrice)*(1-(commission)*0.01);
-        System.out.printf("The profit from the movie %s is %.2f",movieName,result);
+        System.out.printf("The profit from the movie %s is %.2f lv.",movieName,result);
     }
 }
