@@ -9,27 +9,30 @@ public class PrimePairs_13 {
         int b = Integer.parseInt(scanner.nextLine());
         int c = Integer.parseInt(scanner.nextLine());
         int d = Integer.parseInt(scanner.nextLine());
-        int counterI;
-        int counterJ;
-        for (int i = a; i <= (a + c); i++) {
-            counterI = 0;
+        int maxA = a+c;
+        int maxB = b+d;
+        int counterA;
+        int counterB;
+        for (int i = a; i <= maxA; i++) {
+            counterA = 0;
             for (int k = 1; k <= i; k++) {
                 if (i % k == 0) {
-                    counterI++;
+                    counterA++;
                 }
             }
-            if (counterI == 2) {
-                System.out.print(i);
-                for (int j = b; j <= (b + d); j++) {
-                    counterJ = 0;
+            if (counterA == 2) {
+                //System.out.print(i);
+                for (int j = b; j <= maxB; j++) {
+                    counterB = 0;
                     for (int l = 1; l <= j; l++) {
                         if (j % l == 0) {
-                            counterJ++;
+                            counterB++;
                         }
                     }
-                    if (counterJ == 2) {
-                        System.out.print(j);
+                    if (counterB == 2) {
+                        System.out.printf("%d%d",i,j);
                         System.out.println();
+
                     }
                 }
             }

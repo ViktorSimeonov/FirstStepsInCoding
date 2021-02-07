@@ -6,10 +6,11 @@ public class EqualPairs_08 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         double n = Double.parseDouble(scanner.nextLine());
-        double sum = 0;
+        double sum ;
         double firstSum = 0;
         double midSum = 0;
-        double diff1 = 0;
+        double diff1 ;
+        double minDiff = Double.MIN_VALUE;
         boolean equal = true;
         for (int i = 1; i <= n; i++) {
             int num1 = Integer.parseInt(scanner.nextLine());
@@ -25,12 +26,15 @@ public class EqualPairs_08 {
             } else {
                 diff1 = Math.abs(midSum - firstSum);
                 equal = false;
+                if ( diff1 > minDiff ){
+                    minDiff = diff1;
+                }
             }
         }
         if (equal){
             System.out.printf("Yes, value=%.0f",firstSum);
         }else {
-            System.out.printf("No, maxdiff=%.0f",diff1);
+            System.out.printf("No, maxdiff=%.0f",minDiff);
         }
     }
 }
